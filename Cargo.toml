@@ -1,6 +1,26 @@
 [package]
 name = "godot-types"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
+rust-version = "1.70"
+description = "Godot互換の数学型ライブラリ"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/gohan/godot-types"
+
+[features]
+default = []
+
+serde = ["dep:serde"]
+approx = ["dep:approx"]
+rand = ["dep:rand"]
+godot = ["dep:godot"]
 
 [dependencies]
+serde = { version = "1.0", features = ["derive"], optional = true }
+approx = { version = "0.5", optional = true }
+rand = { version = "0.8", optional = true }
+godot = { version = "0.4.2", optional = true }
+
+[dev-dependencies]
+serde_json = "1.0"
+godot = "0.4.2"
