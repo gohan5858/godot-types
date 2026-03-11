@@ -15,6 +15,22 @@ pub use crate::vec3i::Vec3i;
 
 pub use crate::traits::{FromGodot, ToGodot};
 
+// approx: 浮動小数点比較（feature = "approx" 時）
+#[cfg(feature = "approx")]
+pub use approx::{
+    abs_diff_eq, assert_abs_diff_eq, assert_relative_eq, assert_ulps_eq, relative_eq, ulps_eq,
+    AbsDiffEq, RelativeEq, UlpsEq,
+};
+
+// serde: シリアライズ（feature = "serde" 時）
+#[cfg(feature = "serde")]
+pub use serde::{Deserialize, Serialize};
+
+// rand: ランダム生成（feature = "rand" 時）
+#[cfg(feature = "rand")]
+pub use rand::{Rng, SeedableRng};
+
+// godot: Godot組み込み型との変換（feature = "godot" 時）
 #[cfg(feature = "godot")]
 pub use crate::godot_ext::{
     AabbExt, GodotColorExt, QuaternionExt, Rect2Ext, Transform2DExt, Transform3DExt, Vector2Ext,

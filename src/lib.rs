@@ -67,6 +67,19 @@ pub mod float_ops;
 // 一般的に使う項目を再エクスポート
 pub mod prelude;
 
+// 外部クレートを再エクスポート（フィーチャー有効時）
+#[cfg(feature = "approx")]
+pub use approx;
+
+#[cfg(feature = "serde")]
+pub use serde;
+
+#[cfg(feature = "rand")]
+pub use rand;
+
+#[cfg(feature = "godot")]
+pub use godot;
+
 // コア型を再エクスポート
 pub use crate::aabb::Aabb;
 pub use crate::color::Color;

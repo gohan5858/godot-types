@@ -1,7 +1,6 @@
 #![cfg(feature = "approx")]
 
-use approx::assert_relative_eq;
-use godot_types::{Aabb, Color, Quat, Rect, Transform2, Transform3, Vec2, Vec3};
+use godot_types::prelude::*;
 
 #[test]
 fn approx_vec2_rect_transform2_color() {
